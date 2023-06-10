@@ -15,7 +15,7 @@ async function getMe(payload) {
 }
 
 /**
- * 
+ * Provides a token for a registered user
  * @param {string} user_name 
  * @param {string} password 
  * @returns Sign token if user_name exists and 
