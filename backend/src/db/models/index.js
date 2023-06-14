@@ -8,8 +8,8 @@ function setUpModels() {
   Message.belongsTo(Chat, { foreignKey: 'chat_id', targetKey: 'id' })
   Users.hasMany(Message, { foreignKey: 'user_id', sourceKey: 'id' })
   Message.belongsTo(Users, { foreignKey: 'user_id', targetKey: 'id' })
-  Users.belongsToMany(Chat, { through: 'users_chat' })
-  Chat.belongsToMany(Users, { through: 'users_chat' })
+  Users.belongsToMany(Chat, { through: 'users_chats' })
+  Chat.belongsToMany(Users, { through: 'users_chats' })
   sequelize.sync()
 }
 

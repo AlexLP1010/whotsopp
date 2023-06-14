@@ -1,7 +1,8 @@
 const { Message } = require('../db/models/message.model.js')
+const { Users } = require('../db/models/user.model.js')
 
 async function getMessages(chatId) {
-  const foundMessages = Message.findAll({ where: { chat_id: chatId } })
+  const foundMessages = await Message.findAll({ where: { chat_id: chatId }, include: Users })
   return foundMessages
 }
 

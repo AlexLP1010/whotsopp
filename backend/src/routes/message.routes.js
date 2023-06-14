@@ -8,7 +8,8 @@ route.get('/:chatId', authorize, (req, res) => {
   const { chatId } = req.params
   messageController.getMessages(chatId)
     .then(data => res.json(data))
-    .catch(err => res.sendStatus(500))
+    .catch(err => {console.log(err)
+      res.sendStatus(500)})
 })
 
 route.post('/:chatId', authorize, (req, res) => {
